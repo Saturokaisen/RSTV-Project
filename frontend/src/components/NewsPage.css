@@ -1,0 +1,84 @@
+.news-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+    font-family: Arial, sans-serif;
+}
+
+.news-container h1 {
+    text-align: center;
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.news-grid {
+    display: flex;
+    flex-wrap: wrap;  /* Allows wrapping to the next line */
+    gap: 20px;  /* Adds space between the items */
+    justify-content: space-between;  /* Ensures items are spaced out evenly */
+}
+
+.news-card {
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: calc(50% - 10px);  /* Default to two items per row */
+    box-sizing: border-box;
+    overflow: hidden; /* Prevents any content from overflowing the card */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);  /* Adds hover effect */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);  /* Hover shadow effect */
+}
+
+.news-card h2 {
+    font-size: 24px;
+    color: #333;
+    margin: 10px 0;
+}
+
+.news-card .date {
+    font-size: 14px;
+    color: #888;
+    margin-bottom: 10px;
+}
+
+.news-card .content {
+    font-size: 16px;
+    color: #555;
+    margin-bottom: 15px;
+    height: 100px;  /* Set a fixed height for content to prevent cards from growing unevenly */
+    overflow: hidden;  /* Hide overflowed content */
+    text-overflow: ellipsis;  /* Add ellipsis if content is too long */
+}
+
+.news-card .read-more {
+    font-size: 14px;
+    color: #007bff;
+    text-decoration: none;
+}
+
+.news-card .read-more:hover {
+    text-decoration: underline;
+}
+
+/* Fix for image overflow */
+.news-image {
+    width: 100%;  /* Make the image fill the width of the card */
+    height: auto;  /* Maintain aspect ratio */
+    max-height: 200px;  /* Limit the maximum height */
+    object-fit: cover;  /* Crop the image to fit the box without stretching */
+    border-radius: 8px;  /* Round the corners of the image */
+    display: block;  /* Prevent inline image behavior */
+    overflow: hidden; /* Ensure image doesn't overflow the container */
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+    .news-card {
+        width: 100%;  /* On smaller screens, each card takes the full width */
+    }
+}
